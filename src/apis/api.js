@@ -32,3 +32,15 @@ export function getPlayerGoalsById(match_id) {
       return matchPlayerGoals;
     });
 }
+
+export const getLeagues = () => {
+  return sportifyApi.get(`/leagues`).then(({ data: leagues }) => {
+    return leagues;
+  });
+};
+
+export const getLeaguesById = (leagueId) => {
+  return sportifyApi.get(`/leagues/${leagueId}`).then(({ data: league }) => {
+    return league;
+  });
+};
