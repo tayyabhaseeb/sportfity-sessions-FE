@@ -9,3 +9,26 @@ export function getMatches() {
     return matches;
   });
 }
+
+export function getMatchById(match_id) {
+  return sportifyApi.get(`/matches/${match_id}`).then(({ data: match }) => {
+    return match;
+  });
+}
+
+export function getMatchStatsById(match_id) {
+  return sportifyApi
+    .get(`/matches/${match_id}/stats`)
+    .then(({ data: matchStats }) => {
+      return matchStats;
+    });
+}
+
+export function getPlayerGoalsById(match_id) {
+  return sportifyApi
+    .get(`/matches/${match_id}/player_goals`)
+    .then(({ data: matchPlayerGoals }) => {
+      console.log(matchPlayerGoals);
+      return matchPlayerGoals;
+    });
+}
