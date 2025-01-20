@@ -37,7 +37,6 @@ export function getLineUpByMatchId(match_id) {
   return sportifyApi
     .get(`/matches/${match_id}/line_up`)
     .then(({ data: lineUp }) => {
-      console.log(lineUp);
       return lineUp;
     });
 }
@@ -78,9 +77,8 @@ export function postMatchPlayer(match_id, player_id, goals, assists) {
 }
 
 export function deleteMatch(match_id) {
-  return sportifyApi
-    .delete(`/matches/${match_id}`)
-    .then(({ data: matches }) => {
-      return matches;
-    });
+  return sportifyApi.delete(`/matches/${match_id}`).then(({ data: match }) => {
+    console.log(match);
+    return match;
+  });
 }

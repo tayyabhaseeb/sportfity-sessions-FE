@@ -13,6 +13,10 @@ const router = createRouter({
       path: "/second",
       component: SecondPage,
     },
+    {
+      path: "/matches",
+      component: MatchList,
+    },
   ],
 });
 
